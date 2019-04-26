@@ -2,8 +2,7 @@ language: node_js
 node_js:
 - '8'
 - '10'
-- '12'
-after_success: npm run coveralls
+script: npm build
 deploy:
   provider: npm
   email: hg8496@cstolz.de
