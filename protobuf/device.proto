@@ -1,0 +1,29 @@
+syntax = "proto3";
+package janitza;
+
+message Device {
+    enum DeviceType {
+        Unknown = 0;
+        UMG503 = 1;
+        UMG505 = 2;
+        UMG507 = 3;
+        UMG508 = 4;
+        UMG510 = 5;
+        UMG511 = 6;
+        UMG512 = 7;
+        UMG604 = 8;
+        UMG605 = 9;
+        UMG96S = 10;
+        UMG96S2 = 11;
+        UMG96RM = 12;
+        UMG96RME = 13;
+        UMG96RMEL = 14;
+        UMG96PA = 15;
+        PRODATA = 16;
+    }
+    DeviceType deviceType = 1;
+    string serialNumber = 2;
+    string deviceName = 3;
+    string firmwareVersion = 4;
+    string communication = 5;
+}

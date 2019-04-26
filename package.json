@@ -1,0 +1,42 @@
+{
+  "author": "Christian Stolz <hg8496@cstolz.de>",
+  "name": "@hg8496/definitions",
+  "version": "0.0.1",
+  "description": "ProtoBuf definitions an JS lib",
+  "homepage": "https://github.com/hg8496/node-netmask",
+  "bugs": "https://github.com/hg8496/node-netmask/issues",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hg8496/node-netmask.git"
+  },
+  "keywords": [
+    "janitza",
+    "umg",
+    "protobuf",
+    "typescript"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "version": "git add -A lib",
+    "postversion": "git push && git push --tags",
+    "build": "mkdir -p lib && npm run buildjs && npm run buildts",
+    "buildts": "cd lib && pbts -o compiled.d.ts compiled.js",
+    "buildjs": "pbjs -t static-module -w commonjs -o lib/compiled.js protobuf/device.proto",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "protobufjs": "~6.8.8"
+  }
+}
