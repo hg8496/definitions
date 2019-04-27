@@ -1,7 +1,7 @@
 {
   "author": "Christian Stolz <hg8496@cstolz.de>",
   "name": "@hg8496/definitions",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "ProtoBuf definitions an JS lib",
   "homepage": "https://github.com/hg8496/node-netmask",
   "bugs": "https://github.com/hg8496/node-netmask/issues",
