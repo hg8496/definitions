@@ -1,14 +1,14 @@
 {
   "author": "Christian Stolz <hg8496@cstolz.de>",
   "name": "@hg8496/definitions",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "ProtoBuf definitions an JS lib",
-  "homepage": "https://github.com/hg8496/node-netmask",
-  "bugs": "https://github.com/hg8496/node-netmask/issues",
+  "homepage": "https://github.com/hg8496/definitions",
+  "bugs": "https://github.com/hg8496/definitions/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hg8496/node-netmask.git"
+    "url": "git://github.com/hg8496/definitions.git"
   },
   "keywords": [
     "janitza",
