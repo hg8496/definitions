@@ -23,12 +23,14 @@
   ],
   "scripts": {
     "prepare": "npm run build",
+    "prepublishOnly": "npm test",
     "version": "git add -A protobuf",
     "postversion": "git push && git push --tags",
     "build": "mkdir -p lib && npm run buildjs && npm run buildts",
     "buildts": "cd lib && pbts -o index.d.ts index.js",
-    "buildjs": "pbjs -t static-module -w commonjs -o lib/index.js protobuf/device.proto",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "buildjs": "pbjs -t static-module -w commonjs -o lib/index.js protobuf/*.proto",
+    "test": "jest --coverage --config jestconfig.json",
+    "coveralls": "jest --config jestconfig.json --coverage --coverageReporters=text-lcov | coveralls"
   },
   "engines": {
     "node": ">= 8.0.0"
@@ -37,6 +39,15 @@
     "access": "public"
   },
   "devDependencies": {
-    "protobufjs": "~6.8.8"
+    "@types/jest": "^24.0.11",
+    "@types/temp": "^0.8.34",
+    "coveralls": "^3.0.3",
+    "jest": "^24.7.1",
+    "temp": "^0.9.0",
+    "ts-jest": "^24.0.2"
+  },
+  "dependencies": {
+    "protobufjs": "~6.8.8",
+    "typescript": "^3.4.5"
   }
 }

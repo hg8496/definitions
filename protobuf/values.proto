@@ -1,0 +1,67 @@
+syntax = "proto3";
+package janitza.values;
+
+enum TimeBase {
+    Minutes1 = 0;
+    Minutes5 = 1;
+    Minutes10 = 2;
+    Minutes15 = 3;
+    Minutes30 = 4;
+    Minutes60 = 5;
+}
+
+enum Line {
+    L1 = 0;
+    L2 = 1;
+    L3 = 2;
+    N = 3;
+    SUM13 = 4;
+}
+
+message Input {
+    oneof input {
+        Line line = 1;
+        uint32 channel = 2;
+    }
+}
+
+message ValueStream {
+    TimeBase timebase = 1;
+    repeated double values = 2;
+}
+
+message EnergySnapshot {
+    string day = 1;
+    uint32 timeSlot = 2;
+    TimeBase timebase = 3;
+    Input input = 4;
+    double activeEnergyConsumed = 5;
+    double activeEnergySupplied = 6;
+    double activeEnergy = 7;
+    double activePower = 8;
+    double reactiveEnergyConsumed = 9;
+    double reactiveEnergySupplied = 10;
+    double reactiveEnergy = 11;
+    double reactivePower = 12;
+    double apparentPower = 13;
+    double apparentEnergyConsumed = 14;
+    double apparentEnergySupplied = 15;
+    double apparentEnergy = 16;
+}
+
+message EnergyDay {
+    string day = 1;
+    Input input = 2;
+    ValueStream activeEnergyConsumed = 3;
+    ValueStream activeEnergySupplied = 4;
+    ValueStream activeEnergy = 5;
+    ValueStream reactiveEnergyConsumed = 6;
+    ValueStream reactiveEnergySupplied = 7;
+    ValueStream reactiveEnergy = 8;
+    ValueStream apparentEnergyConsumed = 9;
+    ValueStream apparentEnergySupplied = 10;
+    ValueStream apparentEnergy = 11;
+    ValueStream activePower = 12;
+    ValueStream reactivePower = 13;
+    ValueStream apparentPower = 14;
+}
