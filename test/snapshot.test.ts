@@ -31,6 +31,6 @@ test("Full snapshot set", () => {
 test("Active snapshot set", () => {
     const snapshot = EnergySnapshot.create(payloadSnapshotActive);
     const data = EnergySnapshot.encodeDelimited(snapshot).finish();
-    expect(data.length).toBe(58);
+    expect(data.length).toBe(57);
     expect(EnergySnapshot.verify(snapshot)).toBe(null);
 });
