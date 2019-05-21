@@ -1,7 +1,7 @@
 {
   "author": "Christian Stolz <hg8496@cstolz.de>",
   "name": "@hg8496/definitions",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "ProtoBuf definitions an JS lib",
   "homepage": "https://github.com/hg8496/definitions",
   "bugs": "https://github.com/hg8496/definitions/issues",
