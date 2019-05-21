@@ -27,6 +27,7 @@ test("Full set device", () => {
 test("Write two in one file", () => {
     const writer: Writer = Writer.create();
     const device = Device.create(payload604);
+    writer.fork();
     Device.encodeDelimited(device, writer);
     writer.fork();
     device.deviceType = Device.DeviceType.UMG605;
@@ -52,6 +53,7 @@ test("Read full set 2 devices", () => {
     expect(device2.serialNumber).toBe("7000:0085");
     expect(device2.deviceType).toBe(Device.DeviceType.UMG605);
     expect(Device.verify(device2)).toBe(null);
+    expect(reader.pos).toBe(reader.len);
 });
 
 afterAll(() => {

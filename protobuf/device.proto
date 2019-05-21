@@ -5,22 +5,21 @@ package janitza.device;
 message Device {
     enum DeviceType {
         Unknown = 0;
-        UMG503 = 1;
-        UMG505 = 2;
-        UMG507 = 3;
-        UMG508 = 4;
-        UMG510 = 5;
-        UMG511 = 6;
-        UMG512 = 7;
-        UMG604 = 8;
-        UMG605 = 9;
-        UMG96S = 10;
-        UMG96S2 = 11;
-        UMG96RM = 12;
-        UMG96RME = 13;
-        UMG96RMEL = 14;
-        UMG96PA = 15;
-        PRODATA = 16;
+        UMG507 = 1;
+        UMG508 = 2;
+        UMG509 = 3;
+        UMG510 = 4;
+        UMG511 = 5;
+        UMG512 = 6;
+        UMG604 = 7;
+        UMG605 = 8;
+        UMG96S = 9;
+        UMG96S2 = 10;
+        UMG96RM = 11;
+        UMG96RME = 12;
+        UMG96RMEL = 13;
+        UMG96PA = 14;
+        PRODATA = 15;
     }
     DeviceType deviceType = 1;
     string serialNumber = 2;
