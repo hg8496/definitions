@@ -8,6 +8,7 @@ enum TimeBase {
     Minutes15 = 3;
     Minutes30 = 4;
     Minutes60 = 5;
+    Seconds10 = 6;
 }
 
 enum Line {
@@ -16,6 +17,21 @@ enum Line {
     L3 = 2;
     N = 3;
     SUM13 = 4;
+}
+
+enum EnergyValueType {
+    ActiveEnergyConsumed = 0;
+    ActiveEnergySupplied = 1;
+    ActiveEnergy = 2;
+    ActivePower = 3;
+    ReactiveEnergyConsumed = 4;
+    ReactiveEnergySupplied = 5;
+    ReactiveEnergy = 6;
+    ReactivePower = 7;
+    ApparentPower = 8;
+    ApparentEnergyConsumed = 9;
+    ApparentEnergySupplied = 10;
+    ApparentEnergy = 11;
 }
 
 message Input {
@@ -27,7 +43,9 @@ message Input {
 
 message ValueStream {
     TimeBase timebase = 1;
-    repeated double values = 2;
+    EnergyValueType type = 3;
+    Input input = 5;
+    repeated double values = 7;
 }
 
 message EnergySnapshot {
@@ -51,17 +69,5 @@ message EnergySnapshot {
 
 message EnergyDay {
     string day = 1;
-    Input input = 2;
-    ValueStream activeEnergyConsumed = 3;
-    ValueStream activeEnergySupplied = 4;
-    ValueStream activeEnergy = 5;
-    ValueStream reactiveEnergyConsumed = 6;
-    ValueStream reactiveEnergySupplied = 7;
-    ValueStream reactiveEnergy = 8;
-    ValueStream apparentEnergyConsumed = 9;
-    ValueStream apparentEnergySupplied = 10;
-    ValueStream apparentEnergy = 11;
-    ValueStream activePower = 12;
-    ValueStream reactivePower = 13;
-    ValueStream apparentPower = 14;
+    repeated ValueStream values = 5;
 }
