@@ -24,13 +24,9 @@ enum EnergyValueType {
     ActiveEnergySupplied = 1;
     ActiveEnergy = 2;
     ActivePower = 3;
-    ReactiveEnergyConsumed = 4;
-    ReactiveEnergySupplied = 5;
     ReactiveEnergy = 6;
     ReactivePower = 7;
     ApparentPower = 8;
-    ApparentEnergyConsumed = 9;
-    ApparentEnergySupplied = 10;
     ApparentEnergy = 11;
 }
 
