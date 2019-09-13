@@ -2,32 +2,35 @@ syntax = "proto3";
 package janitza.values;
 
 enum TimeBase {
-    Minutes1 = 0;
-    Minutes5 = 1;
-    Minutes10 = 2;
-    Minutes15 = 3;
-    Minutes30 = 4;
-    Minutes60 = 5;
-    Seconds10 = 6;
+    Unknown = 0;
+    Minutes1 = 1;
+    Minutes5 = 2;
+    Minutes10 = 3;
+    Minutes15 = 4;
+    Minutes30 = 5;
+    Minutes60 = 6;
+    Seconds10 = 7;
 }
 
 enum Line {
-    L1 = 0;
-    L2 = 1;
-    L3 = 2;
-    N = 3;
-    SUM13 = 4;
+    Unknown = 0;
+    L1 = 1;
+    L2 = 2;
+    L3 = 3;
+    N = 4;
+    SUM13 = 5;
 }
 
 enum EnergyValueType {
-    ActiveEnergyConsumed = 0;
-    ActiveEnergySupplied = 1;
-    ActiveEnergy = 2;
-    ActivePower = 3;
-    ReactiveEnergy = 6;
-    ReactivePower = 7;
-    ApparentPower = 8;
-    ApparentEnergy = 11;
+    Unknown = 0;
+    ActiveEnergyConsumed = 1;
+    ActiveEnergySupplied = 2;
+    ActiveEnergy = 3;
+    ActivePower = 4;
+    ReactiveEnergy = 5;
+    ReactivePower = 6;
+    ApparentPower = 7;
+    ApparentEnergy = 8;
 }
 
 message Input {
