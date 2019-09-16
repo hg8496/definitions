@@ -20,6 +20,7 @@ message Device {
         UMG96RMEL = 13;
         UMG96PA = 14;
         PRODATA = 15;
+        UMG96PN = 16;
     }
     DeviceType deviceType = 1;
     string serialNumber = 2;
