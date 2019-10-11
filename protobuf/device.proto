@@ -27,4 +27,5 @@ message Device {
     string deviceName = 3;
     string firmwareVersion = 4;
     string communication = 5;
+    string gridVisID = 6;
 }
