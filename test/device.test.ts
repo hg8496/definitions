@@ -14,13 +14,14 @@ const payload604: IDevice = {
     communication: "ip:192.168.2.222",
     deviceType: Device.DeviceType.UMG604,
     firmwareVersion: "5.008",
-    serialNumber: "7000:0084"
+    serialNumber: "7000:0084",
+    gridVisID: "default-1"
 };
 
 test("Full set device", () => {
     const device = Device.create(payload604);
     const data = Device.encodeDelimited(device).finish();
-    expect(data.length).toBe(51);
+    expect(data.length).toBe(62);
     expect(Device.verify(device)).toBe(null);
 });
 
@@ -35,7 +36,7 @@ test("Write two in one file", () => {
     device.communication = "ip:192.168.2.223";
     Device.encodeDelimited(device, writer);
     const data = writer.finish();
-    expect(data.length).toBe(102);
+    expect(data.length).toBe(124);
     expect(Device.verify(device)).toBe(null);
     const wStream = temp.createWriteStream('myBinaryFile');
     wStream.write(data);
