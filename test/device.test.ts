@@ -6,7 +6,7 @@ import Device = janitza.device.Device;
 import IDevice = janitza.device.IDevice;
 
 beforeAll(() => {
-    temp.track(true);
+   // temp.track(true);
 });
 
 const payload604: IDevice = {
@@ -15,13 +15,14 @@ const payload604: IDevice = {
     deviceType: Device.DeviceType.UMG604,
     firmwareVersion: "5.008",
     serialNumber: "7000:0084",
-    gridVisID: "default-1"
+    gridVisID: "default-1",
+    referenceKey: "device:7000:0084"
 };
 
 test("Full set device", () => {
     const device = Device.create(payload604);
     const data = Device.encodeDelimited(device).finish();
-    expect(data.length).toBe(62);
+    expect(data.length).toBe(80);
     expect(Device.verify(device)).toBe(null);
 });
 
@@ -36,7 +37,7 @@ test("Write two in one file", () => {
     device.communication = "ip:192.168.2.223";
     Device.encodeDelimited(device, writer);
     const data = writer.finish();
-    expect(data.length).toBe(124);
+    expect(data.length).toBe(160);
     expect(Device.verify(device)).toBe(null);
     const wStream = temp.createWriteStream('myBinaryFile');
     wStream.write(data);
@@ -53,6 +54,7 @@ test("Read full set 2 devices", () => {
     const device2 = Device.decodeDelimited(reader);
     expect(device2.serialNumber).toBe("7000:0085");
     expect(device2.deviceType).toBe(Device.DeviceType.UMG605);
+    expect(device2.referenceKey).toBe(payload604.referenceKey);
     expect(Device.verify(device2)).toBe(null);
     expect(reader.pos).toBe(reader.len);
 });
