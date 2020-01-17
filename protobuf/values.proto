@@ -19,6 +19,7 @@ enum Line {
     L3 = 3;
     N = 4;
     SUM13 = 5;
+    L4 = 6;
 }
 
 enum EnergyValueType {
@@ -31,6 +32,11 @@ enum EnergyValueType {
     ReactivePower = 6;
     ApparentPower = 7;
     ApparentEnergy = 8;
+    Water = 9;
+    Gas = 10;
+    HeatQuantity = 11;
+    CompressedAir = 12;
+    Oil = 13;
 }
 
 message Input {

@@ -39,15 +39,15 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.25",
+    "@types/jest": "^24.9.0",
     "@types/temp": "^0.8.34",
     "coveralls": "^3.0.9",
     "jest": "^24.9.0",
     "temp": "^0.9.1",
-    "ts-jest": "^24.2.0"
+    "ts-jest": "^24.3.0"
   },
   "dependencies": {
     "protobufjs": "~6.8.8",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.5"
   }
 }
