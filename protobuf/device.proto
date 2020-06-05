@@ -30,3 +30,7 @@ message Device {
     string gridVisID = 6;
     string referenceKey = 7;
 }
+
+message Devices {
+    repeated Device devices = 1;
+}
