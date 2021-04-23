@@ -37,6 +37,11 @@ enum EnergyValueType {
     HeatQuantity = 11;
     CompressedAir = 12;
     Oil = 13;
+    KPI_Result = 100;
+    KPI_A = 101;
+    KPI_B = 102;
+    KPI_C = 103;
+    KPI_D = 104;
 }
 
 message Input {
