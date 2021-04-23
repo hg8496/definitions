@@ -21,7 +21,15 @@ message Device {
         UMG96PA = 14;
         PRODATA = 15;
         UMG96PN = 16;
+        UMG801 = 17;
+        UMG801_BASE = 18;
+        UMG801_MG = 19;
+        UMG801_MG2 = 20;
+        UMG801_MG3 = 21;
         GENERIC = 99;
+        VIRTUAL = 100;
+        KPI = 101;
+        DI = 102;
     }
     DeviceType deviceType = 1;
     string serialNumber = 2;
