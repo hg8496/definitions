@@ -1,0 +1,15 @@
+[package]
+name = "definitions"
+version = "0.1.0"
+authors = ["Christian Stolz <hg8496@cstolz.de>"]
+edition = "2018"
+
+[lib]
+crate-type = ["lib"]
+path = "src/mod.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+quick-protobuf = "0.8.0"
+
